@@ -1,0 +1,36 @@
+{
+  "name": "glimmer-rollup",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "rollup -c --watch",
+    "build": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/plugin-proposal-decorators": "^7.12.1",
+    "@babel/preset-env": "^7.12.10",
+    "@glimmer/babel-plugin-glimmer-env": "^2.0.0-beta.11",
+    "@glimmer/babel-plugin-strict-template-precompile": "^2.0.0-beta.11",
+    "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-commonjs": "^17.0.0",
+    "@rollup/plugin-node-resolve": "^11.0.1",
+    "rollup": "^2.35.1",
+    "rollup-plugin-livereload": "^2.0.0",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2"
+  },
+  "dependencies": {
+    "@glimmer/component": "2.0.0-beta.11",
+    "@glimmer/core": "2.0.0-beta.11",
+    "@glimmer/helper": "2.0.0-beta.11",
+    "@glimmer/modifier": "2.0.0-beta.11",
+    "@glimmer/tracking": "2.0.0-beta.11"
+  }
+}
