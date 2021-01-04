@@ -4,6 +4,7 @@ dependencies:
   '@glimmer/helper': 2.0.0-beta.11
   '@glimmer/modifier': 2.0.0-beta.11
   '@glimmer/tracking': 2.0.0-beta.11
+  page: 1.11.6
 devDependencies:
   '@babel/core': 7.12.10
   '@babel/plugin-proposal-class-properties': 7.12.1_@babel+core@7.12.10
@@ -13,8 +14,10 @@ devDependencies:
   '@glimmer/babel-plugin-strict-template-precompile': 2.0.0-beta.11
   '@rollup/plugin-babel': 5.2.2_909c1d41167457e73a96bf33c609a9e9
   '@rollup/plugin-commonjs': 17.0.0_rollup@2.35.1
+  '@rollup/plugin-image': 2.0.6_rollup@2.35.1
   '@rollup/plugin-node-resolve': 11.0.1_rollup@2.35.1
   rollup: 2.35.1
+  rollup-plugin-css-only: 3.1.0_rollup@2.35.1
   rollup-plugin-livereload: 2.0.0
   rollup-plugin-serve: 1.1.0
   rollup-plugin-terser: 7.0.2_rollup@2.35.1
@@ -1194,6 +1197,18 @@ packages:
       rollup: ^2.30.0
     resolution:
       integrity: sha512-/omBIJG1nHQc+bgkYDuLpb/V08QyutP9amOrJRUSlYJZP+b/68gM//D8sxJe3Yry2QnYIr3QjR3x4AlxJEN3GA==
+  /@rollup/plugin-image/2.0.6_rollup@2.35.1:
+    dependencies:
+      '@rollup/pluginutils': 3.1.0_rollup@2.35.1
+      mini-svg-data-uri: 1.2.3
+      rollup: 2.35.1
+    dev: true
+    engines:
+      node: '>= 8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0 || ^2.0.0
+    resolution:
+      integrity: sha512-bB+spXogbPiFjhBS7i8ajUOgOnVwWK3bnJ6VroxKey/q8/EPRkoSh+4O1qPCw97qMIDspF4TlzXVBhZ7nojIPw==
   /@rollup/plugin-node-resolve/11.0.1_rollup@2.35.1:
     dependencies:
       '@rollup/pluginutils': 3.1.0_rollup@2.35.1
@@ -1223,6 +1238,18 @@ packages:
       rollup: ^1.20.0||^2.0.0
     resolution:
       integrity: sha512-GksZ6pr6TpIjHm8h9lSQ8pi8BE9VeubNT0OMJ3B5uZJ8pz73NPiqOtCog/x2/QzM1ENChPKxMDhiQuRHsqc+lg==
+  /@rollup/pluginutils/4.1.0_rollup@2.35.1:
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.2.2
+      rollup: 2.35.1
+    dev: true
+    engines:
+      node: '>= 8.0.0'
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0
+    resolution:
+      integrity: sha512-TrBhfJkFxA+ER+ew2U2/fHbebhLT/l/2pRk0hfj9KusXUuRXd2v0R58AfaZK9VXDQ4TogOSEmICVrQAA3zFnHQ==
   /@simple-dom/interface/1.4.0:
     resolution:
       integrity: sha512-l5qumKFWU0S+4ZzMaLXFU8tQZsicHEMEyAxI5kDFGhJsRqDwe0a7/iPA/GdxlGyDKseQQAgIz5kzU7eXTrlSpA==
@@ -2181,6 +2208,10 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-XCoy+WlUr7d1+Z8GgSuXmpuUFC9fOhRXglJMx+dwLKTkL44Cjd4W1Z5P+BQZpr+cR93aGP4S/s7Ftw6Nd/kiEw==
+  /isarray/0.0.1:
+    dev: false
+    resolution:
+      integrity: sha1-ihis/Kmo9Bd+Cav8YDiTmwXR7t8=
   /isexe/2.0.0:
     dev: false
     resolution:
@@ -2327,6 +2358,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==
+  /mini-svg-data-uri/1.2.3:
+    dev: true
+    resolution:
+      integrity: sha512-zd6KCAyXgmq6FV1mR10oKXYtvmA9vRoB6xPSTUJTbFApCtkefDnYueVR1gkof3KcdLZo1Y8mjF2DFmQMIxsHNQ==
   /minimatch/3.0.4:
     dependencies:
       brace-expansion: 1.1.11
@@ -2455,6 +2490,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
+  /page/1.11.6:
+    dependencies:
+      path-to-regexp: 1.2.1
+    dev: false
+    resolution:
+      integrity: sha512-P6e2JfzkBrPeFCIPplLP7vDDiU84RUUZMrWdsH4ZBGJ8OosnwFkcUkBHp1DTIjuipLliw9yQn/ZJsXZvarsO+g==
   /path-exists/3.0.0:
     dev: false
     engines:
@@ -2493,6 +2534,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-mkpoFMrBwM1zNgqV8yCDyOpHRbc=
+  /path-to-regexp/1.2.1:
+    dependencies:
+      isarray: 0.0.1
+    dev: false
+    resolution:
+      integrity: sha1-szcFwUAjTYc8hyHHuf2LVB7Tr/k=
   /picomatch/2.2.2:
     dev: true
     engines:
@@ -2621,6 +2668,17 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
+  /rollup-plugin-css-only/3.1.0_rollup@2.35.1:
+    dependencies:
+      '@rollup/pluginutils': 4.1.0_rollup@2.35.1
+      rollup: 2.35.1
+    dev: true
+    engines:
+      node: '>=10.12.0'
+    peerDependencies:
+      rollup: 1 || 2
+    resolution:
+      integrity: sha512-TYMOE5uoD76vpj+RTkQLzC9cQtbnJNktHPB507FzRWBVaofg7KhIqq1kGbcVOadARSozWF883Ho9KpSPKH8gqA==
   /rollup-plugin-livereload/2.0.0:
     dependencies:
       livereload: 0.9.1
@@ -2981,8 +3039,11 @@ specifiers:
   '@glimmer/tracking': 2.0.0-beta.11
   '@rollup/plugin-babel': ^5.2.2
   '@rollup/plugin-commonjs': ^17.0.0
+  '@rollup/plugin-image': ^2.0.6
   '@rollup/plugin-node-resolve': ^11.0.1
+  page: ^1.11.6
   rollup: ^2.35.1
+  rollup-plugin-css-only: ^3.1.0
   rollup-plugin-livereload: ^2.0.0
   rollup-plugin-serve: ^1.1.0
   rollup-plugin-terser: ^7.0.2

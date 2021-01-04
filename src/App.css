@@ -1,0 +1,34 @@
+#img {
+  display: block;
+  margin: auto;
+  height: 128px;
+  width: 128px;
+  padding: 2rem;
+}
+
+#canvas {
+  display: block;
+  margin: 2rem auto;
+  width: 540px;
+  height: 540px;
+}
+
+body {
+  background: #1E293B;
+  color: #8C9AB1;
+  font-family: sans-serif;
+  padding: 1em;
+  text-align: center;
+}
+
+h1 {
+  color: #F5835F;
+}
+
+a {
+  color: white;
+}
+
+li {
+  list-style: none;
+}
