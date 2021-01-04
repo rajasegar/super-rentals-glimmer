@@ -17,6 +17,7 @@ devDependencies:
   '@rollup/plugin-image': 2.0.6_rollup@2.35.1
   '@rollup/plugin-node-resolve': 11.0.1_rollup@2.35.1
   rollup: 2.35.1
+  rollup-plugin-clear: 2.0.7
   rollup-plugin-css-only: 3.1.0_rollup@2.35.1
   rollup-plugin-livereload: 2.0.0
   rollup-plugin-serve: 1.1.0
@@ -2657,7 +2658,6 @@ packages:
   /rimraf/2.7.1:
     dependencies:
       glob: 7.1.6
-    dev: false
     hasBin: true
     resolution:
       integrity: sha512-uWjbaKIK3T1OSVptzX7Nl6PvQ3qAGtKEtVRjRuazjfL3Bx5eI409VZSqgND+4UNnmzLVdPj9FqFJNPqBZFve4w==
@@ -2668,6 +2668,12 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-JZkJMZkAGFFPP2YqXZXPbMlMBgsxzE8ILs4lMIX/2o0L9UBw9O/Y3o6wFw/i9YLapcUJWwqbi3kdxIPdC62TIA==
+  /rollup-plugin-clear/2.0.7:
+    dependencies:
+      rimraf: 2.7.1
+    dev: true
+    resolution:
+      integrity: sha512-Hg8NC3JcJBO1ofgyQC0IACpyKn/yhHPGZ3C7R3ubNGWUXy9JXHQrewk4J4hVcZznw6SOKayLsaNae596Rwt8Vg==
   /rollup-plugin-css-only/3.1.0_rollup@2.35.1:
     dependencies:
       '@rollup/pluginutils': 4.1.0_rollup@2.35.1
@@ -3043,6 +3049,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^11.0.1
   page: ^1.11.6
   rollup: ^2.35.1
+  rollup-plugin-clear: ^2.0.7
   rollup-plugin-css-only: ^3.1.0
   rollup-plugin-livereload: ^2.0.0
   rollup-plugin-serve: ^1.1.0

@@ -2,7 +2,7 @@ import routes from './routes.js';
 import Component from '@glimmer/component';
 import LocaleService from './services/LocaleService.js';
 import { renderComponent } from '@glimmer/core';
-import Loading from './pages/Loading.js';
+import Loading from './Loading.js';
 import page from 'page';
 
 import {
@@ -65,7 +65,7 @@ function startRouting(element, router) {
   });
 
   page('*', () => {
-    import('./pages/NotFound.js').then(component => {
+    import('./NotFound.js').then(component => {
       element.innerHTML = '';
       renderComponent(component.default, { 
         element,

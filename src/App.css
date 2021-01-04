@@ -1,18 +1,3 @@
-#img {
-  display: block;
-  margin: auto;
-  height: 128px;
-  width: 128px;
-  padding: 2rem;
-}
-
-#canvas {
-  display: block;
-  margin: 2rem auto;
-  width: 540px;
-  height: 540px;
-}
-
 body {
   background: #1E293B;
   color: #8C9AB1;
@@ -31,4 +16,9 @@ a {
 
 li {
   list-style: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
 }
