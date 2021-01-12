@@ -1,4 +1,3 @@
-import routes from './routes.js';
 import Component from '@glimmer/component';
 import LocaleService from './services/LocaleService.js';
 import { renderComponent } from '@glimmer/core';
@@ -45,7 +44,6 @@ function startRouting(element, router) {
   };
 
   router.registry.forEach(r => {
-    console.log(r);
     page(r.path, loading, (ctx) => {
       import(`./pages/${r.component}.js`).then(component => {
         element.innerHTML = '';
