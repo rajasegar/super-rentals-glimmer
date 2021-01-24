@@ -20,7 +20,7 @@ const plugins = [
   clear({ targets: ['public/dist'] }),
   image(),
   css({output: 'bundle.css'}),
-  babel(),
+  babel({ babelHelpers: 'runtime', exclude: 'node_modules/**' }),
   !IS_PRODUCTION &&
   serve({
     open: true,

@@ -4,47 +4,37 @@ import {
   createTemplate,
   setComponentTemplate,
   templateOnlyComponent,
-  getOwner
 } from '@glimmer/core';
 
-import { on, action } from '@glimmer/modifier';
-import OtherComponent from '../OtherComponent.js';
-import { fn as helper } from '@glimmer/helper';
-
-const myHelper = helper(function (name, greeting) {
-  return `Helper:   ${greeting} ${name}`;
-});
-
 class Home extends Component {
-  message = 'hello world';
-  @tracked count = 55;
+  @tracked rentals=[];
 
-  get currentLocale() {
-    return getOwner(this).services.locale.currentLocale;
+  constructor() {
+    super(...arguments);
+    (async () => {
+      const response = await fetch('/api/rentals.json');
+      const data = await response.json();
+      console.log(data);
+      this.rentals = data.data;
+    })();
   }
 
-  @action
-  increment() {
-    this.count++;
-  }
 }
 
-const TemplateOnlyComponent = setComponentTemplate(
-  createTemplate(`<h1>I am rendered by a template only component: {{@name}}</h1>`),
-  templateOnlyComponent()
-);
-
+import Jumbo from '../components/Jumbo.js';
+import RentalList from '../components/RentalList.js';
 
 setComponentTemplate(
   createTemplate(
-    { myHelper, TemplateOnlyComponent, OtherComponent, on },
+    { Jumbo, RentalList },
     `
-      <p>{{this.count}}</p>
-      <p> {{myHelper "foo" "hello" }}</p>
-      <p>Curent Locale: {{this.currentLocale}}</p>
-      <button {{on "click" this.increment}}>Increment</button>
-      <TemplateOnlyComponent @name="Glimmer"/>
-      <OtherComponent @count="22"/>
+    <Jumbo>
+  <h2>Welcome to Super Super Rentals!</h2>
+  <p>We hope you find exactly what you're looking for in a place to stay.</p>
+  <a href="/about" class="button">About Us</a>
+</Jumbo>
+<RentalList @rentals={{this.rentals}}/>
+
     `
   ),
   Home

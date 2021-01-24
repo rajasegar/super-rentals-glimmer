@@ -18,31 +18,23 @@ class App extends Component {
   logo = logo;
 }
 
-
+import NavBar from './components/Navbar.js';
 
 setComponentTemplate(
   createTemplate(
-    { Router, Route },
+    { Router, Route, NavBar },
     `
-      <img src={{this.logo}} width="128"/>
-      <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-        <li><a href="/fruits?name=apple">Fruits - Apple</a></li>
-        <li><a href="/fruits?name=orange">Fruits - Orange</a></li>
-        <li><a href="/vegetables/1">Vegetables - 1</a></li>
-        <li><a href="/vegetables/2">Vegetables - 2</a></li>
-        <li><a href="/xyz">(404) Not Found</a></li>
-      </ul>
-      </nav>
+    <div class="container">
+  <NavBar />
+  <div class="body">
       <Route @path="/" @component="Home"/>
       <Route @path="/about" @component="About"/>
       <Route @path="/contact" @component="Contact"/>
-      <Route @path="/fruits" @component="Fruits"/>
-      <Route @path="/vegetables/:id" @component="Vegetables"/>
+      <Route @path="/rental/:id" @component="Rental"/>
       <Router></Router>
+  </div>
+</div>
+
     `
   ),
   App
