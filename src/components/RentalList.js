@@ -17,7 +17,6 @@ export default class RentalList extends Component {
     (async () => {
       const response = await fetch('/api/rentals.json');
       const data = await response.json();
-      console.log(data);
       this.rentals = data.data;
     })();
   }

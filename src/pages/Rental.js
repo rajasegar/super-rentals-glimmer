@@ -17,7 +17,6 @@ class Rental extends Component {
     (async () => {
       const response = await fetch(`/api/rentals/${id}.json`);
       const data = await response.json();
-      console.log(data);
        this.rental = data.data.attributes; 
     })();
   }
