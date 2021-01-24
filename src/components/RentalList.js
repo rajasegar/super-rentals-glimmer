@@ -7,7 +7,20 @@ import RentalsFilter from './RentalsFilter.js';
 import Rental from './Rental.js';
 
 export default class RentalList extends Component {
+
   @tracked query = '';
+  @tracked rentals = [];
+
+  constructor() {
+    super(...arguments);
+
+    (async () => {
+      const response = await fetch('/api/rentals.json');
+      const data = await response.json();
+      console.log(data);
+      this.rentals = data.data;
+    })();
+  }
 
   @action 
   updateQuery(element) {
@@ -23,7 +36,7 @@ setComponentTemplate(createTemplate({ RentalsFilter, Rental, on },`
   </label>
 
   <ul class="results">
-    <RentalsFilter @rentals={{@rentals}} @query={{this.query}} as |results|>
+    <RentalsFilter @rentals={{this.rentals}} @query={{this.query}} as |results|>
       {{#each results as |rental|}}
         <li><Rental @rental={{rental}} /></li>
       {{/each}}
