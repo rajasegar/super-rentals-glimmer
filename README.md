@@ -1,6 +1,8 @@
-# glimmer-rollup
+# Super Rentals in Glimmer
 
-Standalone [Glimmer.js](https://glimmerjs.com) app using [Rollup](https://rollupjs.org)
+Super Rentals using Standalone [Glimmer.js](https://glimmerjs.com) app using [Rollup](https://rollupjs.org)
+
+View demo [here](https://super-rentals-glimmer.surge.sh)
 
 ## Usage
 ```

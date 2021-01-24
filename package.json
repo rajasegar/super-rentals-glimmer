@@ -1,16 +1,17 @@
 {
-  "name": "glimmer-rollup",
-  "version": "1.1.0",
-  "description": "",
+  "name": "super-rentals-glimmer",
+  "version": "1.0.0",
+  "description": "Super Rentals in Glimmer",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "rollup -c --watch",
-    "build": "NODE_ENV=production rollup -c"
+    "build": "NODE_ENV=production rollup -c",
+    "deploy": "npm run build && surge ./public super-rentals-glimmer.surge.sh"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Rajasegar Chandran",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",
