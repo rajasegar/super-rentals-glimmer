@@ -8,6 +8,9 @@ import serve from 'rollup-plugin-serve';
 import { terser } from 'rollup-plugin-terser';
 import liveReload from 'rollup-plugin-livereload';
 import clear from 'rollup-plugin-clear';
+import replace from '@rollup/plugin-replace';
+
+require('dotenv').config();
 
 import fs from 'fs';
 
@@ -29,6 +32,14 @@ const plugins = [
   }),
   IS_PRODUCTION && terser(),
   !IS_PRODUCTION && liveReload(),
+  replace({
+    MAPBOX_ACCESS_TOKEN: `'${process.env.MAPBOX_ACCESS_TOKEN}'`,
+    //process: JSON.stringify({
+      //env: {
+        //isProd: IS_PRODUCTION
+      //}
+    //})
+  })
 ];
 
 const entries = {
