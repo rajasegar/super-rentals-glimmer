@@ -52,6 +52,14 @@ setComponentTemplate(createTemplate({ RentalImage, Map }, `
       <span>Number of bedrooms:</span> {{@rental.bedrooms}}
     </div>
   </div>
+  <Map
+    @lat={{@rental.location.lat}}
+    @lng={{@rental.location.lng}}
+    @zoom="9"
+    @width="150"
+    @height="150"
+    alt="A map of {{@rental.title}}"
+  />
 </article>
 
 `),Rental);
